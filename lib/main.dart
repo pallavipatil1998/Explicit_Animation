@@ -2,7 +2,6 @@ import 'package:explicit_animation/animation_transform_scale.dart';
 // import 'package:explicit_animation/two_controller.dart';
 import 'package:explicit_animation/sized_animation.dart';
 import 'package:explicit_animation/tween_animation.dart';
-import 'package:explicit_animation/twoController.dart';
 import 'package:explicit_animation/two_controllers.dart';
 import 'package:flutter/material.dart';
 
