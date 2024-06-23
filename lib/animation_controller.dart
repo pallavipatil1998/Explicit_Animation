@@ -1,13 +1,13 @@
 import 'package:flutter/material.dart';
 
-class HomePage extends StatefulWidget {
-  const HomePage({super.key});
+class HomepPage extends StatefulWidget {
+  const HomepPage({super.key});
 
   @override
-  State<HomePage> createState() => _HomePageState();
+  State<HomepPage> createState() => _HomepPageState();
 }
 
-class _HomePageState extends State<HomePage> with SingleTickerProviderStateMixin {
+class _HomepPageState extends State<HomepPage> with SingleTickerProviderStateMixin {
 
   late AnimationController mController;
 

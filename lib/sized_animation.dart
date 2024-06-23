@@ -10,7 +10,7 @@ class SizedAnimation extends StatefulWidget {
 class _SizedAnimationState extends State<SizedAnimation>with SingleTickerProviderStateMixin {
   late AnimationController mController;
   late Animation colorTween;
-  late Animation sizeAnim;
+  late Animation sizeTweenAnim;
   
   @override
   void initState() {
@@ -19,15 +19,15 @@ class _SizedAnimationState extends State<SizedAnimation>with SingleTickerProvide
     
     mController=AnimationController(vsync: this,duration: Duration(seconds:3));
     colorTween= ColorTween(begin:Color(0xff00ff00) ,end:Color(0x000000ff) ).animate(mController);
-    // sizeAnim=Tween(begin: 200.0,end: 200.0).animate(mController);
-    sizeAnim=Tween(begin: 200.0,end: 200.0).animate(CurvedAnimation(parent: mController, curve: Curves.bounceOut));
+    // sizeTweenAnim=Tween(begin: 200.0,end: 200.0).animate(mController);
+    sizeTweenAnim=Tween(begin: 200.0,end: 200.0).animate(CurvedAnimation(parent: mController, curve: Curves.bounceOut));
 
 
     mController.addListener(() {
 
       print(("Controller:${mController.value}"));
       print(("XColorTween:${colorTween.value}"));
-      print(("SizedAnim:${sizeAnim.value}"));
+      print(("SizedAnim:${sizeTweenAnim.value}"));
       setState(() {
 
       });
@@ -47,9 +47,9 @@ class _SizedAnimationState extends State<SizedAnimation>with SingleTickerProvide
           children: [
             Center(
               child: Container(
-                width: sizeAnim.value,
-                height: sizeAnim.value,
-                child: Icon(Icons.account_circle,size: sizeAnim.value,color: Colors.blue),
+                width: sizeTweenAnim.value,
+                height: sizeTweenAnim.value,
+                child: Icon(Icons.account_circle,size: sizeTweenAnim.value,color: Colors.blue),
                  decoration: BoxDecoration(
                    borderRadius: BorderRadius.circular(10),
                        color: colorTween.value
