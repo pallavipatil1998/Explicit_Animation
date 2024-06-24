@@ -8,25 +8,46 @@ class LottieAnimation extends StatefulWidget {
   State<LottieAnimation> createState() => _LottieAnimationState();
 }
 
-class _LottieAnimationState extends State<LottieAnimation> {
-  bool isVisible=true;
+class _LottieAnimationState extends State<LottieAnimation> with SingleTickerProviderStateMixin {
+  late AnimationController _controller;
+  // bool isVisible=true;
+
+  @override
+  void initState() {
+    // TODO: implement initState
+    super.initState();
+    _controller=AnimationController(vsync: this);
+  }
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(title: Text("Lottie Animation"),),
-      body: Center(child: InkWell(
-        onTap: (){
-          isVisible=!isVisible;
-          setState(() {
+      body: Center(child: Column(
+        children: [
+          SizedBox(
+            width: 200,
+              height: 200,
+              child: Lottie.asset("assets/lottie/confirm.json",
+                controller: _controller,
+                onLoaded: (composition){
+                _controller.duration= composition.duration;
+                }
+              ),
 
-          });
-        },
-        child: SizedBox(
-          width: 200,
-            height: 200,
-            child: Visibility(
-              visible: isVisible,
-                child: Lottie.asset("assets/lottie/confirm.json"))),
+          ),
+
+          ElevatedButton(
+              onPressed: (){
+                if(_controller.isAnimating){
+                  _controller.stop();
+                }else{
+                  _controller.repeat();
+                }
+              },
+              child: Text("Play")
+          )
+
+        ],
       )),
 
     );
