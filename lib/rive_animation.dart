@@ -88,8 +88,7 @@ class _RiveAnimState extends State<RiveAnim> {
 
 
 
-/*
-import 'package:flutter/material.dart';
+/*import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:rive/rive.dart';
 
@@ -146,12 +145,16 @@ class _RiveAnimState extends State<RiveAnim> {
                riveInput!.value=false;
              }
            }
-         },)
+
+         },
+           child: SizedBox(
+             height: 100,width: 100,
+               child: Rive(artboard: mArtBoard!)),
+         )
        ],)
 
 
        // mArtBoard ==null ? Container( height: 300,width: 300,color: Colors.blue,):Rive(artboard: mArtBoard!)
     );
   }
-}
-*/
+}*/
