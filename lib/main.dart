@@ -1,5 +1,6 @@
 import 'package:explicit_animation/animation_transform_scale.dart';
 import 'package:explicit_animation/lottie_animation.dart';
+import 'package:explicit_animation/rive_animation.dart';
 // import 'package:explicit_animation/two_controller.dart';
 import 'package:explicit_animation/sized_animation.dart';
 import 'package:explicit_animation/tween_animation.dart';
@@ -25,7 +26,7 @@ class MyApp extends StatelessWidget {
       theme: ThemeData(
         primarySwatch: Colors.blue,
       ),
-      home:LottieAnimation()
+      home:RiveAnim()
     );
   }
 }
